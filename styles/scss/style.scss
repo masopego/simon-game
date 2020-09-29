@@ -1,0 +1,138 @@
+@import "./core/_variables.scss";
+@import "./core/_reset.scss";
+@import "./core/_mixins.scss";
+
+body {
+  background-color: $color-background;
+  color: white;
+  box-sizing: border-box;
+}
+
+.button__container {
+  width: 150px;
+  height: 150px;
+  display: grid;
+  margin: 20px 0 40px 0;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5px 10px;
+  position: relative;
+
+  @include tablet {
+    width: 350px;
+    height: 350px;
+    gap: 25px 20px;
+  }
+
+  @include desktop {
+    width: 400px;
+    height: 400px;
+    gap: 25px 20px;
+  }
+
+  button {
+    cursor: pointer;
+    outline: 0;
+    width: 100%;
+    height: 100%;
+    grid-column: 1fr;
+    border: none;
+    box-shadow: inset 0 0 10px #000000;
+  }
+
+  &--red {
+    background-color: $color-red;
+    border-radius: 20px 100% 20px 20px;
+
+    &.active {
+      background-color: red;
+    }
+  }
+
+  &--green {
+    background-color: $color-green;
+    border-radius: 100% 20px 20px 20px;
+
+    &.active {
+      background-color: green;
+    }
+  }
+
+  &--blue {
+    background-color: $color-blue;
+    border-radius: 20px 20px 100% 20px;
+
+    &.active {
+      background-color: blue;
+    }
+  }
+
+  &--yellow {
+    background-color: $color-yellow;
+    border-radius: 20px 20px 20px 100%;
+
+    &.active {
+      background-color: yellow;
+    }
+  }
+}
+
+.audio {
+  display: none;
+}
+
+.main {
+  width: 100%;
+  max-width: 1400px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & .title__container {
+    text-align: center;
+    @include tablet {
+      grid-columns: 1fr;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+    }
+
+    .score {
+      padding: 10px 0;
+    }
+  }
+
+  .start__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    button {
+      cursor: pointer;
+      padding: 10px;
+      background: white;
+      color: black;
+      border: 1px solid white;
+      border-radius: 10px;
+
+      &:hover {
+        background: $color-background;
+        color: white;
+        border: 1px solid white;
+      }
+
+      &.inactive {
+        visibility: hidden;
+      }
+    }
+  }
+}

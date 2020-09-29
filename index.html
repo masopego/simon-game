@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Simon's Game</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./styles/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="main">
+      <section class="title__container">
+        <h1>Simon Game</h1>
+        <p class="subtitle">Pon a prueba tu mente</p>
+        <p class="score">Puntuación: <span class="js-score"></span></p>
+      </section>
+      <audio class="audio js-audio" controls>
+        <source type="audio/wav" src="./sources/blue.wav" />
+      </audio>
+      <section class="button__container">
+        <button
+          id="green"
+          class="button__container--green js-btn-color"
+        ></button>
+        <button id="red" class="button__container--red js-btn-color"></button>
+        <button
+          id="yellow"
+          class="button__container--yellow js-btn-color"
+        ></button>
+        <button id="blue" class="button__container--blue js-btn-color"></button>
+      </section>
+      <section class="start__container">
+        <button id="start-game">Comenzar</button>
+      </section>
+    </main>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
